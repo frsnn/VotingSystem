@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/_header") %>
+
+  <head>
+
+    <title>UVote : Projects</title>
+    <link rel="stylesheet" href="/css/loaderstyle.css">
+    <link rel="stylesheet" href="/css/projectsstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
+
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+
+  <body>
+    <div class="img">
+      <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+      <%- include("partials/_menu") %>
+        <div class="container">
+          <div class="projects-container">
+            <div class="square">
+              <div class="button-container">
+                <button class="btn" id="project1" onclick="toggleTik(this, 1)">1</button>
+                <button class="btn" id="project2" onclick="toggleTik(this, 2)">2</button>
+                <button class="btn" id="project3" onclick="toggleTik(this, 3)">3</button>
+                <button class="btn" id="project4" onclick="toggleTik(this, 4)">4</button>
+                <button class="btn" id="project5" onclick="toggleTik(this, 5)">5</button>
+                <button class="btn" id="project6" onclick="toggleTik(this, 6)">6</button>
+              </div>
+              <div class="button-container">
+                <button class="btn" id="project7" onclick="toggleTik(this, 7)" disabled> x</button>
+                <button class="btn" id="project8" onclick="toggleTik(this, 8)" disabled>x</button>
+                <button class="btn" id="project9" onclick="toggleTik(this, 9)">9</button>
+                <button class="btn" id="project10" onclick="toggleTik(this, 10)">10</button>
+                <button class="btn" id="project11" onclick="toggleTik(this, 11)">11</button>
+                <button class="btn" id="project12" onclick="toggleTik(this, 12)">12</button>
+              </div>
+              <div class="button-container">
+                <button class="btn" id="project13" onclick="toggleTik(this, 13)">13</button>
+                <button class="btn" id="project14" onclick="toggleTik(this, 14)">14</button>
+                <button class="btn" id="project15" onclick="toggleTik(this, 15)">15</button>
+                <button class="btn" id="project16" onclick="toggleTik(this, 16)">16</button>
+                <button class="btn" id="project17" onclick="toggleTik(this, 17)">17</button>
+                <button class="btn" id="project18" onclick="toggleTik(this, 18)">18</button>
+              </div>
+              <div class="button-container">
+                <button class="btn" id="project19" onclick="toggleTik(this, 19)" disabled>x</button>
+                <button class="btn" id="project20" onclick="toggleTik(this, 20)" disabled>x</button>
+                <button class="btn" id="project21" onclick="toggleTik(this, 21)">21</button>
+                <button class="btn" id="project22" onclick="toggleTik(this, 22)">22</button>
+                <button class="btn" id="project23" onclick="toggleTik(this, 23)" disabled>x</button>
+                <button class="btn" id="project24" onclick="toggleTik(this, 24)" disabled>x</button>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="square2">
+
+
+            <div id="projectInfo">
+              <h2 id="projectTitle"></h2>
+              <div id="imageSlider" class="slider-container">
+                <button class="left" onclick="prevImage()"><</button>
+                    <img id="projectImage" src="" alt="Project Image">
+                    <button class="right" onclick="nextImage()">></button>
+              </div>
+              <h3 id="projectAimLabel">Project Aim:</h3>
+              <p id="projectAim"></p>
+              <h3 id="projectImportanceLabel">Project Importance:</h3>
+              <p id="projectImportance"></p>
+            </div>
+          </div>
+
+          <div class="star">
+            <input type="radio" id="r5" onclick="toggleStar(5)">
+            <label for="r5"></label>
+
+            <input type="radio" id="r4" onclick="toggleStar(4)">
+            <label for="r4"></label>
+
+            <input type="radio" id="r3" onclick="toggleStar(3)">
+            <label for="r3"></label>
+
+            <input type="radio" id="r2" onclick="toggleStar(2)">
+            <label for="r2"></label>
+
+            <input type="radio" id="r1" onclick="toggleStar(1)">
+            <label for="r1"></label>
+            <button class="submit-btn" onclick="submitRating()">Submit </button>
+          </div>
+
+
+
+
+
+        </div>
+    </div>
+    <script>
+      // Show the loader immediately when the document starts loading
+      $(window).on("beforeunload", function () {
+          $(".loader-wrapper").fadeIn("slow");
+      });
+  
+      // Hide the loader once all resources are loaded
+      $(window).on("load", function () {
+          $(".loader-wrapper").fadeOut("slow");
+      });
+  </script>
+    <script src="/scripts/votingscript.js"></script>
+    <script src="/scripts/projectscript.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,76 @@
+<!-- profile.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/_header") %>
+
+  <head>
+
+    <title>UVote : Projects</title>
+
+    <link rel="stylesheet" href="/css/loaderstyle.css">
+    <link rel="stylesheet" href="/css/profilestyle.css">
+    <title>UVote : Projects</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+
+  <body>
+    <div class="img">
+      <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+      <%- include("partials/_menu") %>
+
+        <div class="container">
+          <div class="content">
+            <!--User Name -->
+            <div class="profile-box" id="username-box">
+              <h3>Username</h3>
+              <p>
+                <%= user.fullname %>
+              </p>
+            </div>
+
+            <!-- ID -->
+            <div class="profile-box" id="id-box">
+              <h3>Student Id</h3>
+              <p>
+                <%= user.stuid %>
+              </p>
+            </div>
+
+            <!-- E-posta -->
+            <div class="profile-box" id="email-box">
+              <h3>Email</h3>
+              <p>
+                <%= user.email %>
+              </p>
+            </div>
+
+            <!-- Password -->
+            <div class="profile-box" id="password-box">
+              <h3>Password</h3>
+              <p id="password">*********</p>
+            </div>
+
+          </div>
+          <div class="container2">
+            <div>
+              <img src="/images/user.png" alt="Profile Image">
+            </div>
+          </div>
+        </div>
+        <script>
+          // Show the loader immediately when the document starts loading
+          $(window).on("beforeunload", function () {
+              $(".loader-wrapper").fadeIn("slow");
+          });
+      
+          // Hide the loader once all resources are loaded
+          $(window).on("load", function () {
+              $(".loader-wrapper").fadeOut("slow");
+          });
+      </script>
+  </body>
+
+</html>
